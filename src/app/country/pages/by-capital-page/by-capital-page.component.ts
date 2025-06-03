@@ -24,12 +24,18 @@ countries = signal<Country[]>([])
     this.isError.set(null);
 
     this.countryService.searchByCapital(query)
-    .subscribe(countries => {
+    .subscribe({
+    next: (countries) => {
     this.isLoading.set(false);
     this.countries.set(countries);
+    },
+    error: (err)=>{
+    this.isLoading.set(false);
+    this.countries.set([]);
+    this.isError.set(`No se encontró país/es con: ${query}`);
+    console.log(`No se encontró país/es con: ${query}`);
+    }
 
-
-    console.log(countries);
     } );
 
   }
