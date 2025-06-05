@@ -3,4 +3,13 @@ placeholder="Buscar por capital"
 (value)="onSearch($event)"
 />
 
- <country-list [countries]="countries()" />
+
+
+@if (isError()) {
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <h3>{{ isError() }}</h3>
+  </div>
+} @else {
+  <country-list [countries]="countries()" />
+}
+

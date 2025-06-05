@@ -32,8 +32,8 @@ countries = signal<Country[]>([])
     error: (err)=>{
     this.isLoading.set(false);
     this.countries.set([]);
-    this.isError.set(`No se encontró país/es con: ${query}`);
-    console.log(`No se encontró país/es con: ${query}`);
+    this.isError.set(`No se encontró capital con: ${query}`);
+    console.log(`No se encontró capital con: ${query}`);
     }
 
     } );
