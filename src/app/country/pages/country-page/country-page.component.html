@@ -1,1 +1,26 @@
-<country-list [countries]="countries()" />
+@if (countrie().length > 0) {
+<section class="diff aspect-[4/3] w-full max-w-4xl mx-auto bg-white">
+    <div class="diff-item-1" role="img">
+      <img
+        [alt]="countrie()[0].name"
+        [src]="countrie()[0].flagSvg"
+        class="h-full w-auto object-contain"
+      />
+    </div>
+    <div class="diff-item-2" role="img">
+      <img
+        [alt]="countrie()[0].name"
+        [src]="countrie()[0].flagSvg"
+        class="h-full w-auto object-contain blur brightness-50"
+      />
+    </div>
+    <div class="diff-resizer"></div>
+  </section>
+
+
+  <div class="text-center mt-4">
+  <h2 class="text-2xl font-bold">{{ countrie()[0].name }}</h2>
+  <p class= "text-sm  text-gray-400 mb-10">Capital: {{ countrie()[0].capital }}</p>
+</div>
+
+}

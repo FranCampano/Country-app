@@ -13,4 +13,8 @@ export class CountryListComponent {
 
 countries = input.required<Country[]>()
 
+errorMessage=input<unknown|null>();
+isLoadingList=input<boolean>(false);
+isEmpty=input<boolean>(false);
+
  }

@@ -8,7 +8,7 @@ export class CountryMapper{
   static mapRestCountryToCountry(restCountry:RESTCountry): Country{
 
     return{
-    capital:restCountry.capital.join(','),
+capital: Array.isArray(restCountry.capital) ? restCountry.capital.join(', ') : 'No capital',
     cca2:restCountry.cca2,
     flag:restCountry.flag,
     flagSvg:restCountry.flags.svg,

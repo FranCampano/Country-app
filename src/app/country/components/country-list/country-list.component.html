@@ -49,6 +49,35 @@
 </tr>
 
 }
+<!--   -->
+@if(errorMessage() ){
+<tr>
+  <td colspan="8" class="text-center">
+    {{errorMessage()}}
+  </td>
+</tr>
+
+}
+<!--   -->
+@if(countries().length ==0 && !isLoadingList() ){
+<tr>
+  <td colspan="8" class="text-center">
+    No se encontraron resultados
+  </td>
+</tr>
+
+}
+
+<!--   -->
+@if(isLoadingList()){
+<tr>
+  <td colspan="8" class="text-center">
+    Buscando países..
+  </td>
+</tr>
+
+}
+
 
 </tbody>
 

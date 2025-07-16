@@ -3,10 +3,11 @@
 />
 
 
-@if (isError()) {
-  <div style="display: flex; align-items: center; justify-content: center;">
-    <h3>{{ isError() }}</h3>
-  </div>
-} @else {
-  <country-list [countries]="countries()" />
-}
+
+  <country-list
+   [countries]="countries() ?? []"
+  [errorMessage]="isError()"
+  [isEmpty]="countries.length == 0"
+  [isLoadingList]="isLoading()"
+  />
+
